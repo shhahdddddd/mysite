@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Page d'accueil</title>
+</head>
+<body>
+    <div id="conteneur">
+        <h1 id="header"><a href="#" title="Accueil"><span>Accueil</span></a></h1>
+        <nav>
+            <ul id="menu">
+                <li><a href="/magasin/">Application n°1 : Magasin</a></li>
+                <li><a href="/blog/">Application n°2</a></li>
+                <li><a href="#">Application n°3</a></li>
+            </ul>
+        </nav>
+        <div id="contenu">
+            <h2>Bienvenue</h2>
+            <p>Choisissez une application ci-dessus.</p>
+            {% if user.is_authenticated %}
+                <p>Vous êtes connecté en tant que {{ user.username }}.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

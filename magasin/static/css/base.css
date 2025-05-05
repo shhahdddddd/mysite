@@ -1,0 +1,49 @@
+.card {
+    width: 100%;
+    min-height: 300px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    overflow: hidden; /* Ensure content doesn't overflow the card */
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto; /* Let the image keep its natural aspect ratio */
+    max-height: 250px; /* Prevent image from getting too tall */
+    object-fit: contain; /* Show the full image, not cropped */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1; /* Makes sure the text area fills remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    font-weight: bold;
+}
+
+h2 {
+    color: #333;
+    font-weight: 600;
+}

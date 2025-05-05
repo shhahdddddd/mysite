@@ -1,0 +1,24 @@
+{% extends 'magasin/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Liste des Produits</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for article in list %}
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="/media/{{ article.img }}" class="card-img-top" alt="{{ article.libelle }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ article.libelle }}</h5>
+                    <p class="card-text">{{ article.prix }} DT</p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center">
+            <p class="text-muted">Aucun produit disponible.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

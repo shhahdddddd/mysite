@@ -1,0 +1,27 @@
+{% extends 'magasin/base.html' %}
+{% block title %}Catalogue de produits{% endblock %}
+{% block content %}
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div id="products" class="col-lg-9 mx-auto">
+                <div class="row mx-auto">
+                    {% for product in products %}
+                        <div class="card m-2" id="{{ product.id }}" style="width: 18rem;">
+                            <!-- Si vous avez un champ image dans Produit -->
+                            {% if product.img %}
+                                <img src="/media/{{ product.img }}" class="card-img-top" alt="{{ product.libelle }}">
+                            {% endif %}
+                            <div class="card-body">
+                                <p class="card-title">{{ product.libelle }}</p>
+                                <p class="card-text"><b>{{ product.description }}</b></p>
+                                <p class="card-text">{{ product.prix }} DT</p>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p>Aucun produit disponible.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
